@@ -4,7 +4,8 @@ const imageURL = chrome.extension.getURL('icons/antireel.png');
 const sidebarMenuObserver = new MutationObserver(() => {
   const reelsIcon = document.querySelector('a[href="/reels/"]');
   if (reelsIcon) {
-    reelsIcon.style.display = 'none';
+    const parentDiv = reelsIcon.closest('div:not([class])');
+    parentDiv.remove();
   }
 });
 
