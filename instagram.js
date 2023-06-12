@@ -1,14 +1,14 @@
 // Remove reels icon from the sidebar menu
 const imageURL = chrome.extension.getURL('icons/antireel.png');
 
-const observer = new MutationObserver(() => {
+const sidebarMenuObserver = new MutationObserver(() => {
   const reelsIcon = document.querySelector('a[href="/reels/"]');
   if (reelsIcon) {
     reelsIcon.style.display = 'none';
   }
 });
 
-observer.observe(document, { childList: true, subtree: true });
+sidebarMenuObserver.observe(document, { childList: true, subtree: true });
 
 // Block reels from direct link
 // Find and remove main element, create and append container with message
@@ -40,4 +40,33 @@ const hideDirectReels = () => {
   }
 };
 
-const hide = hideDirectReels();
+// Hide reels in chat
+const chatReelsObserver = new MutationObserver(() => {
+  const reelIcons = document.querySelectorAll(
+    'svg[aria-label="Clip"][class="_ab6-"][color="rgb(255, 255, 255)"][fill="rgb(255, 255, 255)"][height="24"][role="img"][viewBox="0 0 24 24"][width="24"]'
+  );
+
+  if (reelIcons.length !== 0) {
+    reelIcons.forEach((icon) => {
+      const parent = icon.closest('div[role="button"]');
+
+      parent.innerHTML = `
+        <div style="display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; text-align:center; ">
+          <div style="display: flex; flex-direction:column; align-items: center; justify-content: center; background: linear-gradient(to bottom, #333, #111); border-radius: 20px; padding:10px; width: 150px; height: 280px; color: white ">
+            <h1 style="font-size:1.2rem; margin-bottom: 1rem; color: white">Stay Productive!</h1>
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="${imageURL}" alt="Block icon" width="100" height="100">
+            </div>
+            <p style="font-size: 0.75rem;">This content has been blocked by the AntiReels extension.</p>
+        </div> 
+      </div>
+      `;
+
+      icon.remove();
+    });
+  }
+});
+
+chatReelsObserver.observe(document, { childList: true, subtree: true });
+
+hideDirectReels();
