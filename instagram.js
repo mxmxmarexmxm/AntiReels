@@ -43,7 +43,7 @@ const hideDirectReels = () => {
 // Hide reels in chat
 const chatReelsObserver = new MutationObserver(() => {
   const reelIcons = document.querySelectorAll(
-    'svg[aria-label="Clip"][class="_ab6-"][color="rgb(255, 255, 255)"][fill="rgb(255, 255, 255)"][height="24"][role="img"][viewBox="0 0 24 24"][width="24"]'
+    'svg[class="_ab6-"][color="rgb(255, 255, 255)"][fill="rgb(255, 255, 255)"][height="24"][role="img"][viewBox="0 0 24 24"][width="24"]'
   );
 
   if (reelIcons.length !== 0) {
