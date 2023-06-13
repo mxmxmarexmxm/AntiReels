@@ -1,13 +1,15 @@
 const imageURL = chrome.extension.getURL('icons/antireel.png');
 
-const observer = new MutationObserver(() => {
-  const link = document.querySelector('a[title="Shorts"]');
-  if (link) {
-    link.style.display = 'none';
+// Observing document to remove Shorts from the sidebar menu
+const sidebarMenuObserver = new MutationObserver(() => {
+  const shortsLink = document.querySelector('a[title="Shorts"]');
+  if (shortsLink) {
+    shortsLink.remove();
+    sidebarMenuObserver.disconnect();
   }
 });
 
-observer.observe(document, { childList: true, subtree: true });
+sidebarMenuObserver.observe(document, { childList: true, subtree: true });
 
 const hideDirectShorts = () => {
   let location = window.location.href;
@@ -41,8 +43,8 @@ const hideDirectShorts = () => {
   }
 };
 
+// Observing location to block direct link shorts
 let prevLocation;
-
 const locationObserver = new MutationObserver(() => {
   let location = window.location.href;
   if (location.includes('/shorts/') && location !== prevLocation) {
@@ -53,4 +55,13 @@ const locationObserver = new MutationObserver(() => {
 
 locationObserver.observe(document, { childList: true, subtree: true });
 
-hideDirectShorts();
+// Observing suggestions to remove shorts from them
+const contentObeserver = new MutationObserver(() => {
+  const element = document.querySelector('[is-shorts]');
+  if (element) {
+    element.remove();
+    contentObeserver.disconnect();
+  }
+});
+
+contentObeserver.observe(document, { childList: true, subtree: true });
