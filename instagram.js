@@ -1,6 +1,6 @@
-// Remove reels icon from the sidebar menu
 const imageURL = chrome.extension.getURL('icons/antireel.png');
 
+// Remove reels icon from the sidebar menu
 const sidebarMenuObserver = new MutationObserver(() => {
   const reelsIcon = document.querySelector('a[href="/reels/"]');
   if (reelsIcon) {
@@ -15,11 +15,11 @@ sidebarMenuObserver.observe(document, { childList: true, subtree: true });
 // Find and remove main element, create and append container with message
 const hideDirectReels = () => {
   let location = window.location.href;
-  if (location.includes('/reels/')) {
+  if (location.includes('/reels/') || location.includes('/p/')) {
     let main = document.getElementsByTagName('main');
     main[0].remove();
 
-    let section = document.getElementsByTagName('section');
+    let section = document.getElementsByTagName('section')[0];
     let container = document.createElement('div');
     container.style.height = '100vh';
     container.style.paddingLeft = '20px';
@@ -37,7 +37,7 @@ const hideDirectReels = () => {
       </div> 
     </div>
   `;
-    section[0].appendChild(container);
+    section.appendChild(container);
   }
 };
 
@@ -59,8 +59,8 @@ const chatReelsObserver = new MutationObserver(() => {
               <img src="${imageURL}" alt="Block icon" width="100" height="100">
             </div>
             <p style="font-size: 0.75rem;">This content has been blocked by the AntiReels extension.</p>
-        </div> 
-      </div>
+          </div>
+        </div>
       `;
 
       icon.remove();
