@@ -1,9 +1,11 @@
 # AntiReels
 
 ## Description
+
 AntiReels is a simple extension for Firefox and Chrome that helps you stay focused and productive by blocking short content from Facebook, Instagram, and YouTube. It is designed for users who find themselves easily distracted by endless scrolling through short content on these social media platforms during work hours.
 
 ## Features:
+
 - The extension hides short/reels icons in the sidebar menu on Facebook, Instagram, and YouTube, allowing you to avoid temptation and stay focused on your tasks
 - Instagram:
   - Hide reels from chat: With this new functionality, the extension allows you to hide reels from chat
@@ -14,6 +16,7 @@ AntiReels is a simple extension for Firefox and Chrome that helps you stay focus
   - Block reels access through direct links
   - Hide reels from sidebar menu
 - Youtube:
+
   - Block shorts access through direct links
   - Hide shorts from YouTube suggestions
   - Hide shorts from sidebar menu
@@ -26,5 +29,26 @@ AntiReels is a simple extension for Firefox and Chrome that helps you stay focus
 
 By using AntiReels, you can maintain better focus, increase productivity, and regain control over your browsing habits.
 
+## Installation:
+
+Please note that the extension is not yet available on official browser stores. However, you can follow the steps below to manually load the extension in Chrome and Firefox:
+
+- Chrome
+1. Clone or download the repository to your local machine.
+2. Open Chrome and type chrome://extensions in the address bar.
+3. Toggle on the Developer mode option located in the top right corner.
+4. Click on the Load unpacked button.
+5. Navigate to the downloaded repository folder and select it.
+6. The extension should now be loaded and ready to use in Chrome.
+- Firefox
+1. Clone or download the repository to your local machine.
+2. Open Firefox and type about:debugging in the address bar.
+3. Click on the This Firefox tab.
+4. Click on the Load Temporary Add-on button.
+5. Navigate to the downloaded repository folder and select the manifest.json file.
+6. The extension should now be loaded and ready to use in Firefox.
+ Please note that loading the extension manually in this way is temporary and may require you to repeat the steps each time you open the browser.
+
 ## Contributing
+
 Contributions are welcome! If you have any ideas, bug fixes, or feature requests, feel free to submit a pull request.
