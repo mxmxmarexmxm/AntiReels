@@ -50,3 +50,30 @@ const locationObserver = new MutationObserver(() => {
 });
 
 hideDirectReel();
+
+// Hide reels in chat
+const chatReelsObserver = new MutationObserver(() => {
+  const reelLinks = document.querySelectorAll('a[aria-label^="Reel"]');
+
+  if (reelLinks.length !== 0) {
+    reelLinks.forEach((link) => {
+      const parent = link.closest('div[role="none"]');
+
+      parent.innerHTML = `
+        <div style="display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; text-align:center; ">
+          <div style="display: flex; flex-direction:column; align-items: center; justify-content: center; background: linear-gradient(to bottom, #333, #111); border-radius: 20px; padding:10px; width: 150px; height: 280px; color: white ">
+            <h1 style="font-size:1.2rem; margin-bottom: 1rem; color: white">Stay Productive!</h1>
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="${imageURL}" alt="Block icon" width="100" height="100">
+            </div>
+            <p style="font-size: 0.75rem;">This content has been blocked by the AntiReels extension.</p>
+          </div>
+        </div>
+      `;
+
+      link.remove();
+    });
+  }
+});
+
+chatReelsObserver.observe(document, { childList: true, subtree: true });
