@@ -15,6 +15,10 @@
     {
       "matches": ["*://*.facebook.com/*"],
       "js": ["facebook.js"]
+    },
+    {
+      "matches": ["*://*.tiktok.com/*"],
+      "js": ["tiktok.js"]
     }
   ],
   "icons": {
