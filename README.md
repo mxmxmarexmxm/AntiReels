@@ -16,10 +16,11 @@ AntiReels is a simple extension for Firefox and Chrome that helps you stay focus
   - Block reels access through direct links
   - Hide reels from sidebar menu
 - Youtube:
-
   - Block shorts access through direct links
   - Hide shorts from YouTube suggestions
   - Hide shorts from sidebar menu
+- TikTok:
+  -Completely block TikTok because the platform is entirely composed of short content
 
 - It does not collect any personal data, ensuring your privacy and security while using the extension.
 - Future Plans:
