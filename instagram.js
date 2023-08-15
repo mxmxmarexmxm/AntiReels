@@ -9,8 +9,6 @@ const sidebarMenuObserver = new MutationObserver(() => {
   }
 });
 
-sidebarMenuObserver.observe(document, { childList: true, subtree: true });
-
 // Block reels from direct link
 // Find and remove main element, create and append container with message
 const hideDirectReels = () => {
@@ -68,6 +66,30 @@ const chatReelsObserver = new MutationObserver(() => {
   }
 });
 
-chatReelsObserver.observe(document, { childList: true, subtree: true });
+const enableScript = () => {
+  sidebarMenuObserver.observe(document, { childList: true, subtree: true });
+  chatReelsObserver.observe(document, { childList: true, subtree: true });
+  hideDirectReels();
 
-hideDirectReels();
+  localStorage.setItem('isEnabled', 'true');
+};
+
+const disableScript = () => {
+  sidebarMenuObserver.disconnect();
+  chatReelsObserver.disconnect();
+
+  localStorage.removeItem('isEnabled');
+};
+
+browser.runtime.onMessage.addListener(function (message) {
+  if (message.action === 'enableInstagram') {
+    enableScript();
+  } else {
+    disableScript();
+  }
+});
+
+const isEnabled = localStorage.getItem('isEnabled');
+if (isEnabled) {
+  enableScript();
+}
