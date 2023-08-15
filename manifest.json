@@ -32,5 +32,9 @@
     "default_icon": "icons/antireel.png",
     "default_title": "AntiReels",
     "default_popup": "popup.html"
-  }
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
 }
