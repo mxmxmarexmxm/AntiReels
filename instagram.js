@@ -70,15 +70,11 @@ const enableScript = () => {
   sidebarMenuObserver.observe(document, { childList: true, subtree: true });
   chatReelsObserver.observe(document, { childList: true, subtree: true });
   hideDirectReels();
-
-  localStorage.setItem('isEnabled', 'true');
 };
 
 const disableScript = () => {
   sidebarMenuObserver.disconnect();
   chatReelsObserver.disconnect();
-
-  localStorage.removeItem('isEnabled');
 };
 
 browser.runtime.onMessage.addListener(function (message) {
@@ -89,7 +85,8 @@ browser.runtime.onMessage.addListener(function (message) {
   }
 });
 
-const isEnabled = localStorage.getItem('isEnabled');
-if (isEnabled) {
-  enableScript();
-}
+browser.storage.local.get('isEnabled').then((result) => {
+  if (result.isEnabled) {
+    enableScript();
+  }
+});
