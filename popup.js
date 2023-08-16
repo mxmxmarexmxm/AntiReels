@@ -1,25 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
   const checkbox = document.getElementById('ig');
 
-  browser.storage.local.get('isEnabled').then((result) => {
+  chrome.storage.local.get(['isEnabled'], function (result) {
     const isEnabled = result.isEnabled;
     checkbox.checked = isEnabled;
+    console.log(isEnabled, 'isEnabled');
 
     checkbox.addEventListener('change', function () {
-      browser.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         const tabId = tabs[0].id;
 
         if (checkbox.checked) {
-          // Store the value in browser.storage.local
-          browser.storage.local.set({ isEnabled: true }).then(() => {
-            // Send a message to the content script to enable
-            browser.tabs.sendMessage(tabId, { action: 'enableInstagram' });
+          // Store the value in chrome.storage.local
+          chrome.storage.local.set({ isEnabled: true }, function () {
+            if (chrome.runtime.lastError) {
+              console.error('Error setting storage:', chrome.runtime.lastError);
+            } else {
+              // Send a message to the content script to enable
+              chrome.tabs.sendMessage(tabId, { action: 'enableInstagram' });
+            }
           });
         } else {
-          // Store the value in browser.storage.local
-          browser.storage.local.set({ isEnabled: false }).then(() => {
-            // Send a message to the content script to disable
-            browser.tabs.sendMessage(tabId, { action: 'disableInstagram' });
+          // Store the value in chrome.storage.local
+          chrome.storage.local.set({ isEnabled: false }, function () {
+            if (chrome.runtime.lastError) {
+              console.error('Error setting storage:', chrome.runtime.lastError);
+            } else {
+              // Send a message to the content script to disable
+              chrome.tabs.sendMessage(tabId, { action: 'disableInstagram' });
+            }
           });
         }
       });

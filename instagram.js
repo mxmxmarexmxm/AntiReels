@@ -77,7 +77,8 @@ const disableScript = () => {
   chatReelsObserver.disconnect();
 };
 
-browser.runtime.onMessage.addListener(function (message) {
+chrome.runtime.onMessage.addListener(function (message) {
+  console.log(message)
   if (message.action === 'enableInstagram') {
     enableScript();
   } else {
@@ -85,7 +86,8 @@ browser.runtime.onMessage.addListener(function (message) {
   }
 });
 
-browser.storage.local.get('isEnabled').then((result) => {
+chrome.storage.local.get(['isEnabled'], function (result) {
+  console.log(result)
   if (result.isEnabled) {
     enableScript();
   }
