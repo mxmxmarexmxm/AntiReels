@@ -7,6 +7,7 @@ AntiReels is a simple extension for Firefox and Chrome that helps you stay focus
 ## Features:
 
 - The extension hides short/reels icons in the sidebar menu on Facebook, Instagram, and YouTube, allowing you to avoid temptation and stay focused on your tasks
+- Selective blocking: Customize which social media platforms to block shorts from, giving you more control over your browsing experience.
 - Instagram:
   - Hide reels from chat: With this new functionality, the extension allows you to hide reels from chat
   - Block reels access through direct links: Now, when you access reels directly, the extension will automatically hide them from your view
@@ -24,7 +25,6 @@ AntiReels is a simple extension for Firefox and Chrome that helps you stay focus
 
 - It does not collect any personal data, ensuring your privacy and security while using the extension.
 - Future Plans:
-  - Selective blocking: Customize which social media platforms to block shorts from, giving you more control over your browsing experience.
   - Timer functionality: Set a timer for watching shorts, and when the time is up, receive a popup notification and automatically stop playing the content.
   - Cross-browser compatibility: Plan to expand the extension's compatibility to other popular web browsers, providing a wider range of users with the benefits of AntiReels.
 
