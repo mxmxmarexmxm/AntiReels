@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.local.get(['isEnabled'], function (result) {
     const isEnabled = result.isEnabled;
     checkbox.checked = isEnabled;
-    console.log(isEnabled, 'isEnabled');
 
     checkbox.addEventListener('change', function () {
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {

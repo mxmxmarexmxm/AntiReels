@@ -78,7 +78,6 @@ const disableScript = () => {
 };
 
 chrome.runtime.onMessage.addListener(function (message) {
-  console.log(message)
   if (message.action === 'enableInstagram') {
     enableScript();
   } else {
@@ -87,7 +86,6 @@ chrome.runtime.onMessage.addListener(function (message) {
 });
 
 chrome.storage.local.get(['isEnabled'], function (result) {
-  console.log(result)
   if (result.isEnabled) {
     enableScript();
   }
