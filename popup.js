@@ -53,6 +53,7 @@ function toggleBlocker(id, storageItem, enableMessage, disableMessage) {
 }
 
 toggleBlocker('ig', 'igEnabled', 'enableInstagram', 'disableInstagram');
+toggleBlocker('fb', 'fbEnabled', 'enableFacebook', 'disableFacebook');
 
 // OLD CODE
 

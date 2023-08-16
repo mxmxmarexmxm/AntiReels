@@ -9,8 +9,6 @@ const sidebarMenuObserver = new MutationObserver(() => {
   }
 });
 
-sidebarMenuObserver.observe(document, { childList: true, subtree: true });
-
 const hideDirectReel = () => {
   let location = window.location.href;
   if (location.includes('/reel/')) {
@@ -49,8 +47,6 @@ const locationObserver = new MutationObserver(() => {
   }
 });
 
-hideDirectReel();
-
 // Hide reels in chat
 const chatReelsObserver = new MutationObserver(() => {
   const reelLinks = document.querySelectorAll('a[aria-label^="Reel"]');
@@ -76,4 +72,27 @@ const chatReelsObserver = new MutationObserver(() => {
   }
 });
 
-chatReelsObserver.observe(document, { childList: true, subtree: true });
+const enableScript = () => {
+  sidebarMenuObserver.observe(document, { childList: true, subtree: true });
+  chatReelsObserver.observe(document, { childList: true, subtree: true });
+  hideDirectReel();
+};
+
+const disableScript = () => {
+  sidebarMenuObserver.disconnect();
+  chatReelsObserver.disconnect();
+};
+
+chrome.runtime.onMessage.addListener(function (message) {
+  if (message.action === 'enableFacebook') {
+    enableScript();
+  } else {
+    disableScript();
+  }
+});
+
+chrome.storage.local.get(['fbEnabled'], function (result) {
+  if (result.fbEnabled) {
+    enableScript();
+  }
+});
