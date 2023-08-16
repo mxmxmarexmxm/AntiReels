@@ -55,6 +55,7 @@ function toggleBlocker(id, storageItem, enableMessage, disableMessage) {
 toggleBlocker('ig', 'igEnabled', 'enableInstagram', 'disableInstagram');
 toggleBlocker('fb', 'fbEnabled', 'enableFacebook', 'disableFacebook');
 toggleBlocker('yt', 'ytEnabled', 'enableYoutube', 'disableYoutube');
+toggleBlocker('tt', 'ttEnabled', 'enableTiktok', 'disableTiktok');
 
 // OLD CODE
 
