@@ -85,8 +85,8 @@ chrome.runtime.onMessage.addListener(function (message) {
   }
 });
 
-chrome.storage.local.get(['isEnabled'], function (result) {
-  if (result.isEnabled) {
+chrome.storage.local.get(['igEnabled'], function (result) {
+  if (result.igEnabled) {
     enableScript();
   }
 });
