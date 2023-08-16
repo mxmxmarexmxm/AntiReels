@@ -9,8 +9,6 @@ const sidebarMenuObserver = new MutationObserver(() => {
   }
 });
 
-sidebarMenuObserver.observe(document, { childList: true, subtree: true });
-
 const hideDirectShorts = () => {
   let body = document.body;
   body.innerHTML = '';
@@ -50,8 +48,6 @@ const locationObserver = new MutationObserver(() => {
   }
 });
 
-locationObserver.observe(document, { childList: true, subtree: true });
-
 // Observing suggestions to remove shorts from them
 const contentObeserver = new MutationObserver(() => {
   const element = document.querySelector('[is-shorts]');
@@ -61,4 +57,28 @@ const contentObeserver = new MutationObserver(() => {
   }
 });
 
-contentObeserver.observe(document, { childList: true, subtree: true });
+const enableScript = () => {
+  sidebarMenuObserver.observe(document, { childList: true, subtree: true });
+  contentObeserver.observe(document, { childList: true, subtree: true });
+  locationObserver.observe(document, { childList: true, subtree: true });
+};
+
+const disableScript = () => {
+  sidebarMenuObserver.disconnect();
+  contentObeserver.disconnect();
+  locationObserver.disconnect();
+};
+
+chrome.runtime.onMessage.addListener(function (message) {
+  if (message.action === 'enableYoutube') {
+    enableScript();
+  } else {
+    disableScript();
+  }
+});
+
+chrome.storage.local.get(['ytEnabled'], function (result) {
+  if (result.ytEnabled) {
+    enableScript();
+  }
+});
