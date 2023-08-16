@@ -1,7 +1,8 @@
 body {
-  height: 400px;
-  width: 200px;
-  border: 2px solid black;
+  height: 300px;
+  width: 300px;
+  background-color: rgb(32, 28, 28);
+  border: none;
 }
 
 .switch {
@@ -67,5 +68,15 @@ input:checked + .slider:before {
 .flex {
   display: flex;
   justify-content: space-between;
+  margin-top: 15px;
 }
 
+.container {
+  height: 350px;
+  width: 270px;
+  background-color: rgb(32, 28, 28);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
