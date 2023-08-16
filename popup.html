@@ -3,12 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
     <title>Popup</title>
   </head>
-  <body style="width: 200px">
-    <div>
-      <input type="checkbox" id="ig" name="ig" />
-      <label for="ig">Instagram</label>
+  <body>
+    <div class="flex">
+      <span class="checkbox-label">Instagram</span>
+      <label class="switch">
+        <input type="checkbox" id="ig" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="flex">
+      <span class="checkbox-label">Facebook</span>
+      <label class="switch">
+        <input type="checkbox" id="fb" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="flex">
+      <span class="checkbox-label">Youtube</span>
+      <label class="switch">
+        <input type="checkbox" id="yt" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="flex">
+      <span class="checkbox-label">Tiktok</span>
+      <label class="switch">
+        <input type="checkbox" id="tt" />
+        <span class="slider round"></span>
+      </label>
     </div>
     <div>
       <input type="checkbox" id="fb" name="fb" checked />
