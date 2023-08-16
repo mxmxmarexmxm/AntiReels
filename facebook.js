@@ -38,14 +38,14 @@ const hideDirectReel = () => {
 };
 
 // Observing location to block direct link shorts
-let prevLocation;
-const locationObserver = new MutationObserver(() => {
-  let location = window.location.href;
-  if (location !== prevLocation) {
-    prevLocation = location;
-    hideDirectReel();
-  }
-});
+// let prevLocation;
+// const locationObserver = new MutationObserver(() => {
+//   let location = window.location.href;
+//   if (location !== prevLocation) {
+//     prevLocation = location;
+//     hideDirectReel();
+//   }
+// });
 
 // Hide reels in chat
 const chatReelsObserver = new MutationObserver(() => {
