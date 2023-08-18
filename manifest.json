@@ -31,11 +31,7 @@
   "browser_action": {
     "default_icon": "icons/antireel.png",
     "default_title": "AntiReels",
-    "default_popup": "popup.html"
+    "default_popup": "popup/popup.html"
   },
-  "permissions": [
-    "activeTab",
-    "tabs",
-    "storage"
-  ]
+  "permissions": ["activeTab", "tabs", "storage"]
 }
