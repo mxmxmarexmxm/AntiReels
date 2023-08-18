@@ -101,3 +101,8 @@ input:checked + .slider:before {
   gap: 15px;
   margin-bottom: 3rem;
 }
+
+.instruction {
+  font-weight: 300;
+  font-size: .8rem;
+}
