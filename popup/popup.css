@@ -3,6 +3,10 @@ body {
   border: none;
 }
 
+h1 {
+  margin: 0;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -94,5 +98,6 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px
+  gap: 15px;
+  margin-bottom: 3rem;
 }
