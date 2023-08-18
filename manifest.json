@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "AntiReels",
   "version": "1.0",
   "description": "Short Content Blocker: Block short content from Facebook, Instagram, and YouTube.",
@@ -27,8 +27,13 @@
     "48": "icons/antireel.png",
     "128": "icons/antireel.png"
   },
-  "web_accessible_resources": ["icons/antireel.png"],
-  "browser_action": {
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "action": {
     "default_icon": "icons/antireel.png",
     "default_title": "AntiReels",
     "default_popup": "popup/popup.html"
