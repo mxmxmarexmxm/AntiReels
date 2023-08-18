@@ -83,6 +83,10 @@ input:checked + .slider:before {
   padding: 1rem;
 }
 
+.switch-container {
+  margin-bottom: 1.5rem;
+}
+
 .image-wrapper {
   height: 50px;
   width: 50px;
