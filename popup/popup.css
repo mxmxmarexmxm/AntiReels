@@ -1,6 +1,7 @@
 body {
   background-color: rgb(32, 28, 28);
   border: none;
+  font-family: monospace;
 }
 
 h1 {
