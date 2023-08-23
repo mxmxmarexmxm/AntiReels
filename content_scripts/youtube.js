@@ -1,4 +1,4 @@
-const imageURL = chrome.runtime.getURL('icons/antireel.png');
+const imageURL = chrome.runtime.getURL('images/antireel.png');
 
 // Observing document to remove Shorts from the sidebar menu
 const sidebarMenuObserver = new MutationObserver(() => {
