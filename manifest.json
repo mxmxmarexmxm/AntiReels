@@ -3,6 +3,11 @@
   "name": "AntiReels",
   "version": "1.0",
   "description": "Short Content Blocker: Block short content from Facebook, Instagram, and YouTube.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "anti@reels.com"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["*://*.instagram.com/*"],
