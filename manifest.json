@@ -22,21 +22,22 @@
     }
   ],
   "icons": {
-    "16": "icons/antireel.png",
-    "32": "icons/antireel.png",
-    "48": "icons/antireel.png",
-    "128": "icons/antireel.png"
+    "16": "images/antireel.png",
+    "32": "images/antireel.png",
+    "48": "images/antireel.png",
+    "128": "images/antireel.png"
   },
   "web_accessible_resources": [
     {
-      "resources": ["icons/*"],
+      "resources": ["images/*"],
       "matches": ["*://*/*"]
     }
   ],
   "action": {
-    "default_icon": "icons/antireel.png",
+    "default_icon": "images/antireel.png",
     "default_title": "AntiReels",
     "default_popup": "popup/popup.html"
   },
-  "permissions": ["activeTab", "tabs", "storage"]
+  "permissions": ["activeTab", "tabs", "storage"],
+  "host_permissions": ["*://*.instagram.com/*"]
 }
