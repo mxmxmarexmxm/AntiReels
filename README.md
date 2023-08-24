@@ -31,9 +31,13 @@ By using AntiReels, you can maintain better focus, increase productivity, and re
 
 ## Installation:
 
-Please note that the extension is not yet available on official browser stores. However, you can follow the steps below to manually load the extension in Chrome and Firefox:
+- Firefox
+
+The extension can be conveniently installed from the official Firefox Add-ons store [here](https://addons.mozilla.org/en-US/firefox/addon/antireels/).
 
 - Chrome
+
+For Chrome users, you can still follow these steps to manually install the extension:
 
 1. Clone or download the repository to your local machine.
 2. Open Chrome and type chrome://extensions in the address bar.
@@ -41,16 +45,6 @@ Please note that the extension is not yet available on official browser stores. 
 4. Click on the Load unpacked button.
 5. Navigate to the downloaded repository folder and select it.
 6. The extension should now be loaded and ready to use in Chrome.
-
-- Firefox
-
-1. Clone or download the repository to your local machine.
-2. Open Firefox and type about:debugging in the address bar.
-3. Click on the This Firefox tab.
-4. Click on the Load Temporary Add-on button.
-5. Navigate to the downloaded repository folder and select the manifest.json file.
-6. The extension should now be loaded and ready to use in Firefox.
-   Please note that loading the extension manually in this way is temporary and may require you to repeat the steps each time you open the browser.
 
 ## Contributing
 
