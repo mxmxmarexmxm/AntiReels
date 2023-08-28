@@ -5,7 +5,6 @@ const sidebarMenuObserver = new MutationObserver(() => {
   const shortsLink = document.querySelector('a[title="Shorts"]');
   if (shortsLink) {
     shortsLink.remove();
-    sidebarMenuObserver.disconnect();
   }
 });
 
