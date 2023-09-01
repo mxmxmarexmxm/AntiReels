@@ -8,7 +8,7 @@ AntiReels is a simple extension for Firefox and Chrome that helps you stay focus
 
 - Cross-browser compatibility
 - Selective blocking: Customize which social media platforms to block shorts from, giving you more control over your browsing experience.
-  <span style="display:block;text-align:left">![Selective Menu](./images/selective-menu.png?raw=true 'Selective blocking')</span>
+    <div style="text-align:center"><img src="./images/selective-menu.png" alt='Selective blocking'/></div>
 - Instagram:
   - Hide reels from chat: With this new functionality, the extension allows you to hide reels from chat
   - Block reels access through direct links: Now, when you access reels directly, the extension will automatically hide them from your view
