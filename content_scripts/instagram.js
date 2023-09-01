@@ -39,7 +39,7 @@ const hideDirectReels = () => {
   }
 };
 
-// Observing location to block direct link shorts
+// Observing location to block direct link reels
 let prevLocation;
 const locationObserver = new MutationObserver(() => {
   let location = window.location.href;
