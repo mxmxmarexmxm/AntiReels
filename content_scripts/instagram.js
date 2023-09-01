@@ -39,6 +39,16 @@ const hideDirectReels = () => {
   }
 };
 
+// Observing location to block direct link shorts
+let prevLocation;
+const locationObserver = new MutationObserver(() => {
+  let location = window.location.href;
+  if (location !== prevLocation) {
+    prevLocation = location;
+    hideDirectReels();
+  }
+});
+
 // Hide reels in chat
 const chatReelsObserver = new MutationObserver(() => {
   const reelIcons = document.querySelectorAll(
@@ -69,12 +79,14 @@ const chatReelsObserver = new MutationObserver(() => {
 const enableScript = () => {
   sidebarMenuObserver.observe(document, { childList: true, subtree: true });
   chatReelsObserver.observe(document, { childList: true, subtree: true });
+  locationObserver.observe(document, { childList: true, subtree: true });
   hideDirectReels();
 };
 
 const disableScript = () => {
   sidebarMenuObserver.disconnect();
   chatReelsObserver.disconnect();
+  locationObserver.disconnect();
 };
 
 chrome.runtime.onMessage.addListener(function (message) {
