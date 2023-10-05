@@ -17,6 +17,7 @@ AntiReels is a simple extension for Firefox and Chrome that helps you stay focus
   - Hide reels from chat
   - Block reels access through direct links
   - Hide reels from sidebar menu
+  - Hide reels on the homepage
 - Youtube:
   - Block shorts access through direct links
   - Hide shorts from YouTube suggestions
