@@ -9,6 +9,18 @@ const sidebarMenuObserver = new MutationObserver(() => {
   }
 });
 
+// Observing home page to remove Shorts from the suggestions
+const homePageObserver = new MutationObserver(() => {
+  const elementToRemove = document.querySelector(
+    'a[href^="/reel/"][href$="see_more"]'
+  );
+  if (elementToRemove) {
+    const grandparentElement = elementToRemove.parentElement.parentElement;
+    grandparentElement.remove();
+    homePageObserver.disconnect();
+  }
+});
+
 const hideDirectReel = () => {
   let location = window.location.href;
   if (location.includes('/reel/')) {
@@ -76,6 +88,7 @@ const enableScript = () => {
   sidebarMenuObserver.observe(document, { childList: true, subtree: true });
   chatReelsObserver.observe(document, { childList: true, subtree: true });
   locationObserver.observe(document, { childList: true, subtree: true });
+  homePageObserver.observe(document, { childList: true, subtree: true });
   hideDirectReel();
 };
 
@@ -83,6 +96,7 @@ const disableScript = () => {
   sidebarMenuObserver.disconnect();
   chatReelsObserver.disconnect();
   locationObserver.disconnect();
+  homePageObserver.disconnect();
 };
 
 chrome.runtime.onMessage.addListener(function (message) {
