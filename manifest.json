@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AntiReels",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Short Content Blocker: Block short content from Facebook, Instagram, and YouTube.",
   "browser_specific_settings": {
     "gecko": {
