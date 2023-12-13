@@ -61,6 +61,7 @@ const locationObserver = new MutationObserver(() => {
 
 // Hide reels in chat
 const chatReelsObserver = new MutationObserver(() => {
+    // TODO: FIX !!!
   const reelLinks = document.querySelectorAll('a[aria-label^="Reel"]');
 
   if (reelLinks.length !== 0) {
