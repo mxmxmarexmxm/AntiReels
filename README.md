@@ -12,6 +12,7 @@ AntiReels is a simple extension for Firefox and Chrome that helps you stay focus
 - Instagram:
   - Hide reels from chat: With this new functionality, the extension allows you to hide reels from chat
   - Block reels access through direct links: Now, when you access reels directly, the extension will automatically hide them from your view
+    <div style="text-align:center"><img src="./images/antireels-full.png" alt='AntiReels fullscreen preview'/></div>
   - Hide reels from sidebar menu
 - Facebook:
   - Hide reels from chat
