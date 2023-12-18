@@ -61,10 +61,12 @@ const locationObserver = new MutationObserver(() => {
 
 // Hide reels in chat
 const chatReelsObserver = new MutationObserver(() => {
-    // TODO: FIX !!!
-  const reelLinks = document.querySelectorAll('a[aria-label^="Reel"]');
+  // Target a reel's links by their href.
+  const reelLinks = document.querySelectorAll(
+    'a[href^="https://www.facebook.com/share/r/"]'
+  );
 
-  if (reelLinks.length !== 0) {
+  if (reelLinks.length > 0) {
     reelLinks.forEach((link) => {
       const parent = link.closest('div[role="none"]');
 
